@@ -1,7 +1,28 @@
 <div class="container">
-    <table>
-        <tr>
-            
-        </tr>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col" colspan="2">PRODUCTO</th>
+                <th scope="col">Q.</th>
+                <th scope="col">ESTADO</th>
+                <th scope="col">TIPO</th>
+                <th scope="col">FECHA</th>
+                <th scope="col" colspan="2" class="text-center">CLIENTE</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let task of tasks">
+                <td class="p-0" [ngStyle]="{'width': '90px'}">
+                    <img src="{{task.logo}}" alt="" [ngStyle]="{'width': '90px'}">
+                 </td>
+                <td class="text-start p-0">{{task.referencia}}</td>
+                <td>{{task.cantidad}}</td>
+                <td>{{task.estado}}</td>
+                <td>{{task.tipo}}</td>
+                <td>{{task.fecha}}</td>
+                <td class="text-end p-0">{{task.codigo_cliente}}</td>
+                <td class="text-start p-0">{{task.alias_cliente}}</td>
+            </tr>
+        </tbody>
     </table>
 </div>
