@@ -10,6 +10,7 @@ import { Tasks } from '../../interfaces/tasks.interface';
 export class TableComponent implements OnInit{
 
   tasks: Tasks[] = [];
+  p: number = 1;
 
 constructor(private tasksSvc: TasksService){
 }
