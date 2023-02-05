@@ -11,6 +11,7 @@ import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
 export class SearchComponent implements OnInit {
   searchForm!: FormGroup;
   types: string[] = [];
+  status: any = [];
   datePickerConfig: Partial<BsDatepickerConfig>;
 
   @Output() submitEvent: EventEmitter<string> = new EventEmitter<string>();
@@ -28,6 +29,7 @@ export class SearchComponent implements OnInit {
   ngOnInit(): void {
     this.searchForm = this.initForm();
     this.getTypesFromService();
+    this.getStatusFromService();
   }
 
   initForm(): FormGroup {
@@ -42,7 +44,6 @@ export class SearchComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.searchForm.value);
     this.submitEvent.emit(this.searchForm.value);
   }
 
@@ -56,4 +57,16 @@ export class SearchComponent implements OnInit {
     }
   })
 }
+
+private getStatusFromService(): void {
+  this.typesSvc.getStatus().subscribe((res: any) => {
+    if (res?.data?.length) {
+      const data = res.data;
+      this.status = data;
+    } else {
+      this.status = [];
+    }
+  })
+}
+
 }

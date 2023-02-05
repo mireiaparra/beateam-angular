@@ -31,15 +31,20 @@ ngOnInit(){
       'X-Auth': this.token
     })
 
-    let params = new HttpParams({
-      fromObject:{
-        cliente: searchForm.client,
-        referencia: searchForm.reference,
-        usuario: searchForm.user,
-        tipo: searchForm.type,
-        fecha: searchForm.date
-      }
-    });
+    let fechaInicio = searchForm.date[0]?.toISOString()?.split('T')[0] || ''
+    let fechaFin = searchForm.date[1]?.toISOString()?.split('T')[0] || ''
+
+    let params = new HttpParams({fromObject: {
+      cliente: searchForm.client,
+      referencia: searchForm.reference,
+      usuario: searchForm.user,
+      tipo: searchForm.type,
+      'fecha[inicio]': fechaInicio,
+      'fecha[fin]': fechaFin,
+        // estado: searchForm.status
+    }});
+
+    console.log(params);
 
     return this.http.get<[]>(environment.urlAPI, {headers, params})
   }
@@ -47,6 +52,14 @@ ngOnInit(){
   getTypes(): Observable<string[]>{
     let headers = new HttpHeaders({
       'funcion':'getTipos',
+      'X-Auth': this.token
+    })
+    return this.http.get<[]>(environment.urlAPI, {headers})
+  }
+
+  getStatus(): Observable<string[]>{
+    let headers = new HttpHeaders({
+      'funcion':'getEstados',
       'X-Auth': this.token
     })
     return this.http.get<[]>(environment.urlAPI, {headers})
