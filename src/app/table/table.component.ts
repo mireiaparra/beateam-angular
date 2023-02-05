@@ -12,6 +12,7 @@ export class TableComponent implements OnInit, OnChanges{
   tasks: Tasks[] = [];
   p: number = 1;
 
+
   @Input() searchForm: any;
 
 constructor(private tasksSvc: TasksService){
@@ -26,12 +27,11 @@ ngOnChanges(): void {
 }
 
 private getDataFromService(): void{
-  this.tasks = [];
 
   this.tasksSvc.getTasks(this.searchForm).subscribe((res: any) => {
     if (res?.data?.length) {
       const data = res.data;
-      this.tasks = [...this.tasks, ...data];
+      this.tasks = data;
     } else {
       this.tasks = [];
     }
@@ -40,5 +40,7 @@ private getDataFromService(): void{
 
   })
 }
+
+
 
 }

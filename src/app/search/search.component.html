@@ -19,7 +19,10 @@
     </div>
     <div class="mg-4">
         <label class="form-label" for="type">Tipo:</label>
-        <select name="type" id="type" formControlName="type"></select>
+        <select class="form-select" name="type" id="type" formControlName="type">
+        <option default value="">TODOS</option>
+        <option *ngFor="let type of types" value={{type}}>{{type}}</option>
+    </select>
     </div>
     <div class="mg-4">
         <label class="form-label" for="status">Estado:</label>

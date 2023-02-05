@@ -11,11 +11,11 @@ export class AppComponent  {
   searchForm = {
     client: "",
     reference: "",
-    user: ""
+    user: "",
+    type: ""
   };
 
   send(searchForm: any) {
-    console.log('send');
     this.searchForm = searchForm;
   }
 

@@ -35,10 +35,20 @@ ngOnInit(){
       fromObject:{
         cliente: searchForm.client,
         referencia: searchForm.reference,
-        usuario: searchForm.user
+        usuario: searchForm.user,
+        tipo: searchForm.type
       }
     });
 
     return this.http.get<[]>(environment.urlAPI, {headers, params})
   }
+
+  getTypes(): Observable<string[]>{
+    let headers = new HttpHeaders({
+      'funcion':'getTipos',
+      'X-Auth': this.token
+    })
+    return this.http.get<[]>(environment.urlAPI, {headers})
+  }
+
 }
