@@ -15,7 +15,16 @@
     </div>
     <div class="mg-4">
         <label class="form-label" for="date">Fecha:</label>
-        <input class="form-control" type="date" name="date" id="date" formControlName="date">
+   
+               <input type="text"
+                  placeholder="Fecha"
+                  class="form-control"
+                  bsDaterangepicker
+                  placement="right"
+                  [bsConfig]="datePickerConfig"
+                  formControlName="date"
+                  />
+  
     </div>
     <div class="mg-4">
         <label class="form-label" for="type">Tipo:</label>

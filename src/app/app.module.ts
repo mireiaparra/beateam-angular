@@ -7,6 +7,8 @@ import { TableComponent } from './table/table.component';
 import { SearchComponent } from './search/search.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BsDatepickerModule, BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -19,9 +21,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     NgxPaginationModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    BsDatepickerModule.forRoot(),
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [BsDatepickerConfig],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

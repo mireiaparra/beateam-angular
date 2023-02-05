@@ -36,7 +36,8 @@ ngOnInit(){
         cliente: searchForm.client,
         referencia: searchForm.reference,
         usuario: searchForm.user,
-        tipo: searchForm.type
+        tipo: searchForm.type,
+        fecha: searchForm.date
       }
     });
 

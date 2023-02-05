@@ -12,7 +12,8 @@ export class AppComponent  {
     client: "",
     reference: "",
     user: "",
-    type: ""
+    type: "",
+    date: []
   };
 
   send(searchForm: any) {

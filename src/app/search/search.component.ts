@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { TasksService } from '../services/tasks.service';
+import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
 
 @Component({
   selector: 'app-search',
@@ -10,10 +11,19 @@ import { TasksService } from '../services/tasks.service';
 export class SearchComponent implements OnInit {
   searchForm!: FormGroup;
   types: string[] = [];
+  datePickerConfig: Partial<BsDatepickerConfig>;
 
   @Output() submitEvent: EventEmitter<string> = new EventEmitter<string>();
 
-  constructor(private fb: FormBuilder, private typesSvc: TasksService) {}
+  constructor(private fb: FormBuilder, private typesSvc: TasksService) {
+    this.datePickerConfig = Object.assign({},
+      {
+        containerClass: 'theme-dark-blue',
+        showWeekNumbers: false,
+        rangeInputFormat: 'DD/MM/YY'
+      });
+
+  }
 
   ngOnInit(): void {
     this.searchForm = this.initForm();
@@ -44,7 +54,6 @@ export class SearchComponent implements OnInit {
     } else {
       this.types = [];
     }
-    console.log(this.types);
   })
 }
 }

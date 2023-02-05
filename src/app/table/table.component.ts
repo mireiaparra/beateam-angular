@@ -22,7 +22,6 @@ ngOnInit(): void {
 }
 
 ngOnChanges(): void {
-  console.log('onchanges');
   this.getDataFromService();
 }
 
@@ -35,7 +34,6 @@ private getDataFromService(): void{
     } else {
       this.tasks = [];
     }
-    console.log("get tasks from service")
     console.log(this.tasks)
 
   })
