@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
 import { environment } from '../../environments/environment';
 import * as crypto from 'crypto-js';
@@ -25,11 +25,18 @@ export class TasksService implements OnInit {
 ngOnInit(){
 }
 
-  getTasks(): Observable<Tasks[]>{
+  getTasks(client: string): Observable<Tasks[]>{
     let headers = new HttpHeaders({
       'funcion':'getTareas',
       'X-Auth': this.token
     })
-    return this.http.get<[]>(environment.urlAPI, {headers})
+
+    let params = new HttpParams({
+      fromObject:{
+        cliente: client
+      }
+    });
+
+    return this.http.get<[]>(environment.urlAPI, {headers, params})
   }
 }

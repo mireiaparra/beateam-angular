@@ -8,6 +8,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent  {
   title = 'beateam-angular';
+  searchForm = {
+    client: ""
+  };
+
+  send(searchForm: any) {
+    console.log('send');
+    this.searchForm = searchForm;
+  }
 
     constructor() { }
  

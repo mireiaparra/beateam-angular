@@ -1,9 +1,9 @@
 
 <div class="container">
-<form [formGroup]="searchForm">
+<form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
     <div class="mg-4">
         <label class="form-label" for="client">Cliente:</label>
-        <input class="form-control" type="text" name="client" id="client" formControlName="client">
+        <input class="form-control" type="text" name="client" id="client" formControlName="client" />
     </div>
     <div class="mg-4">
         <label class="form-label" for="reference">Referencia:</label>
@@ -25,5 +25,6 @@
         <label class="form-label" for="status">Estado:</label>
         <input class="form-control" type="checkbox" name="status" id="status" formControlName="status">
     </div>
+    <button type="submit">Buscar</button>
 </form>
 </div>
