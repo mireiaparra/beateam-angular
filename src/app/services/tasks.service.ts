@@ -34,7 +34,8 @@ ngOnInit(){
     let params = new HttpParams({
       fromObject:{
         cliente: searchForm.client,
-        referencia: searchForm.reference
+        referencia: searchForm.reference,
+        usuario: searchForm.user
       }
     });
 

@@ -10,7 +10,8 @@ export class AppComponent  {
   title = 'beateam-angular';
   searchForm = {
     client: "",
-    reference: ""
+    reference: "",
+    user: ""
   };
 
   send(searchForm: any) {
