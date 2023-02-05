@@ -25,7 +25,7 @@ export class TasksService implements OnInit {
 ngOnInit(){
 }
 
-  getTasks(client: string): Observable<Tasks[]>{
+  getTasks(searchForm: any): Observable<Tasks[]>{
     let headers = new HttpHeaders({
       'funcion':'getTareas',
       'X-Auth': this.token
@@ -33,7 +33,8 @@ ngOnInit(){
 
     let params = new HttpParams({
       fromObject:{
-        cliente: client
+        cliente: searchForm.client,
+        referencia: searchForm.reference
       }
     });
 

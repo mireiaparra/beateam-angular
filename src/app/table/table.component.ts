@@ -17,8 +17,6 @@ export class TableComponent implements OnInit, OnChanges{
 constructor(private tasksSvc: TasksService){
 }
 
-filterClients = "";
-
 ngOnInit(): void {
 }
 
@@ -30,7 +28,7 @@ ngOnChanges(): void {
 private getDataFromService(): void{
   this.tasks = [];
 
-  this.tasksSvc.getTasks(this.searchForm.client).subscribe((res: any) => {
+  this.tasksSvc.getTasks(this.searchForm).subscribe((res: any) => {
     if (res?.data?.length) {
       const data = res.data;
       this.tasks = [...this.tasks, ...data];

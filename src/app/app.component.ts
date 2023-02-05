@@ -9,7 +9,8 @@ import { Component } from '@angular/core';
 export class AppComponent  {
   title = 'beateam-angular';
   searchForm = {
-    client: ""
+    client: "",
+    reference: ""
   };
 
   send(searchForm: any) {
