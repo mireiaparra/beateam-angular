@@ -11,10 +11,11 @@ import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
 export class SearchComponent implements OnInit {
   searchForm!: FormGroup;
   types: string[] = [];
-  status: any = [];
+  status: Array<any> = [];
+  selectedStatus: Array<string> = [];
   datePickerConfig: Partial<BsDatepickerConfig>;
 
-  @Output() submitEvent: EventEmitter<string> = new EventEmitter<string>();
+  @Output() submitEvent: EventEmitter<any> = new EventEmitter<{searchForm: string, selectedStatus: string}>();
 
   constructor(private fb: FormBuilder, private typesSvc: TasksService) {
     this.datePickerConfig = Object.assign({},
@@ -44,7 +45,9 @@ export class SearchComponent implements OnInit {
   }
 
   onSubmit() {
-    this.submitEvent.emit(this.searchForm.value);
+    this.submitEvent.emit({
+      "searchForm": this.searchForm.value, 
+      "selectedStatus": this.selectedStatus});
   }
 
   private getTypesFromService(): void {
@@ -69,4 +72,12 @@ private getStatusFromService(): void {
   })
 }
 
+
+onCheckboxChange(event: any, eachStatus: string) {
+  if(event.target.checked){
+    this.selectedStatus.push(eachStatus);
+  } else {
+    this.selectedStatus.splice(this.selectedStatus.indexOf(eachStatus), 1)
+  }
+}
 }

@@ -35,16 +35,14 @@ ngOnInit(){
     let fechaFin = searchForm.date[1]?.toISOString()?.split('T')[0] || ''
 
     let params = new HttpParams({fromObject: {
-      cliente: searchForm.client,
-      referencia: searchForm.reference,
-      usuario: searchForm.user,
-      tipo: searchForm.type,
+      'cliente': searchForm.client,
+      'referencia': searchForm.reference,
+      'usuario': searchForm.user,
+      'tipo': searchForm.type,
       'fecha[inicio]': fechaInicio,
       'fecha[fin]': fechaFin,
-        // estado: searchForm.status
+      'estado[]': searchForm.status
     }});
-
-    console.log(params);
 
     return this.http.get<[]>(environment.urlAPI, {headers, params})
   }

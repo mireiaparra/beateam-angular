@@ -26,7 +26,6 @@ ngOnChanges(): void {
 }
 
 private getDataFromService(): void{
-
   this.tasksSvc.getTasks(this.searchForm).subscribe((res: any) => {
     if (res?.data?.length) {
       const data = res.data;
@@ -38,7 +37,4 @@ private getDataFromService(): void{
 
   })
 }
-
-
-
 }

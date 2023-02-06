@@ -13,11 +13,13 @@ export class AppComponent  {
     reference: "",
     user: "",
     type: "",
-    date: []
+    date: [],
+    status: []
   };
 
-  send(searchForm: any) {
-    this.searchForm = searchForm;
+  send(event: any) {
+    this.searchForm = event.searchForm;
+    this.searchForm.status = event.selectedStatus;
   }
 
     constructor() { }

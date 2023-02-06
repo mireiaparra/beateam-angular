@@ -34,8 +34,8 @@
     </div>
     <div class="mg-4">Estado:
         <div class="form-check" *ngFor="let eachStatus of status">
-            <input class="form-check-input" type="checkbox" name="status" id="status" formControlName="status" value={{eachStatus}} [checked]="true">
-            <label class="form-check-label" for={{eachStatus}}>{{eachStatus}}</label>
+            <input class="form-check-input" type="checkbox" name="{{eachStatus}}" id="{{eachStatus}}" formControlName="status" value={{eachStatus}} (change)="onCheckboxChange($event, eachStatus)" >
+            <label class="form-check-label active" for={{eachStatus}} >{{eachStatus}}</label>
         </div>
     </div>
     <button type="submit">Buscar</button>
