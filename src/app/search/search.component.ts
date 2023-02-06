@@ -80,4 +80,11 @@ onCheckboxChange(event: any, eachStatus: string) {
     this.selectedStatus.splice(this.selectedStatus.indexOf(eachStatus), 1)
   }
 }
+
+onClear(input: string){
+  this.searchForm.patchValue({
+    [input]: ''
+  });
+}
+
 }

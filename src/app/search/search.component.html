@@ -1,41 +1,57 @@
-
 <div class="container">
 <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
     <div class="mg-4">
-        <label class="form-label" for="client">Cliente:</label>
-        <input class="form-control" type="text" name="client" id="client" formControlName="client" />
+            <label class="form-label" for="client">Cliente:</label>
+        <div class="input-group">
+            <input class="form-control" type="text" name="client" id="client" formControlName="client" />
+            <button class="btn btn-outline-danger" (click)="onClear('client')">X</button>
+        </div>
     </div>
     <div class="mg-4">
         <label class="form-label" for="reference">Referencia:</label>
-        <input class="form-control" type="text" name="reference" id="reference" formControlName="reference">
+        <div class="input-group">
+            <input class="form-control" type="text" name="reference" id="reference" formControlName="reference">
+            <button class="btn btn-outline-danger" (click)="onClear('reference')">X</button>
+        </div>
     </div>
     <div class="mg-4">
         <label class="form-label" for="user">Usuario:</label>
-        <input class="form-control" type="text" name="user" id="user" formControlName="user">
+        <div class="input-group">
+            <input class="form-control" type="text" name="user" id="user" formControlName="user">
+            <button class="btn btn-outline-danger" (click)="onClear('user')">X</button>
+        </div>
     </div>
     <div class="mg-4">
         <label class="form-label" for="date">Fecha:</label>
    
-               <input type="text"
-                  class="form-control"
-                  bsDaterangepicker
-                  placement="right"
-                  [bsConfig]="datePickerConfig"
-                  formControlName="date"
-                  />
+               <div class="input-group">
+                   <input type="text"
+                      class="form-control"
+                      bsDaterangepicker
+                      placement="right"
+                      [bsConfig]="datePickerConfig"
+                      formControlName="date"
+                      />
+                            <button class="btn btn-outline-danger" (click)="onClear('date')">X</button>
+               </div>
   
     </div>
     <div class="mg-4">
         <label class="form-label" for="type">Tipo:</label>
-        <select class="form-select" name="type" id="type" formControlName="type">
-        <option default value="">TODOS</option>
-        <option *ngFor="let type of types" value={{type}}>{{type}}</option>
-    </select>
+        <div class="input-group">
+            <select class="form-select" name="type" id="type" formControlName="type">
+            <option default value="">TODOS</option>
+            <option *ngFor="let type of types" value={{type}}>{{type}}</option>
+                </select>
+                <button class="btn btn-outline-danger" (click)="onClear('type')">X</button>
+        </div>
     </div>
-    <div class="mg-4">Estado:
-        <div class="form-check" *ngFor="let eachStatus of status">
-            <input class="form-check-input" type="checkbox" name="{{eachStatus}}" id="{{eachStatus}}" formControlName="status" value={{eachStatus}} (change)="onCheckboxChange($event, eachStatus)" >
-            <label class="form-check-label active" for={{eachStatus}} >{{eachStatus}}</label>
+    <div> Estado:
+        <div class="mg-4 p-2 border rounded">
+            <div class="form-check" *ngFor="let eachStatus of status">
+                <input class="form-check-input" type="checkbox" name="{{eachStatus}}" id="{{eachStatus}}" formControlName="status" value={{eachStatus}} (change)="onCheckboxChange($event, eachStatus)" >
+                <label class="form-check-label active" for={{eachStatus}} >{{eachStatus}}</label>
+            </div>
         </div>
     </div>
     <button type="submit">Buscar</button>
