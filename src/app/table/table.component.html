@@ -46,6 +46,6 @@
             </tr>
         </tbody>
     </table>
-    <p class="mb-1">LÍNEAS: {{tasks.length}}</p>
-    <pagination-controls (pageChange)="p = $event" previousLabel= "" nextLabel= "" ></pagination-controls>
+    <p class="mb-0">LÍNEAS: <span class="fw-bold">{{tasks.length}}</span></p>
+    <pagination-controls class="d-flex flex-row-reverse pagination" (pageChange)="p = $event" previousLabel= "" nextLabel= "" ></pagination-controls>
 </div>
