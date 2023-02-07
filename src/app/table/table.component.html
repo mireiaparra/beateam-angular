@@ -7,7 +7,7 @@
                 <th scope="col" class="text-center fw-normal">ESTADO</th>
                 <th scope="col" class="fw-normal">TIPO</th>
                 <th scope="col" class="fw-normal">FECHA</th>
-                <th scope="col" colspan="2" class="text-center fw-normal">CLIENTE</th>
+                <th scope="col" colspan="2" class="text-start fw-normal tasks__client">CLIENTE</th>
             </tr>
         </thead>
         <tbody>
@@ -45,8 +45,10 @@
                     <p class="rounded ps-1 pe-1 tasks__status text-white bg-dark">{{task.tipo}}</p>
                 </td>
                 <td>{{task.fecha}}</td>
-                <td class="text-end p-0">{{task.codigo_cliente}}</td>
-                <td class="text-start p-0">{{task.alias_cliente}}</td>
+                <td class="p-0">
+                    <p class="text-end tasks__code mb-0">{{task.codigo_cliente}}</p>
+                </td>
+                <td class="text-start ps-0">{{task.alias_cliente}}</td>
             </tr>
         </tbody>
     </table>

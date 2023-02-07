@@ -7,6 +7,17 @@
         width: max-content;
         position: relative;
         margin: 0 auto;
+        font-size: 13px;
+    }
+
+    &__code {
+        font-size: 11px;
+        padding-right: 3px;
+        padding-top: 11px; 
+    }
+
+    &__client {
+        transform: translateX(43px);
     }
 }
 
