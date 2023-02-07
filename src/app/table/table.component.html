@@ -11,7 +11,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let task of tasks | paginate: { itemsPerPage: 10, currentPage: p }">
+            <tr *ngFor="let task of tasks | paginate: { itemsPerPage: getTasksPerPage(), currentPage: p }">
                 <td class="p-0 w-90">
                     <img src="{{task.logo}}" alt="" [ngStyle]="{'width': '90px'}">
                  </td>
@@ -46,5 +46,6 @@
             </tr>
         </tbody>
     </table>
-    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    <p class="mb-1">LÍNEAS: {{tasks.length}}</p>
+    <pagination-controls (pageChange)="p = $event" previousLabel= "" nextLabel= "" ></pagination-controls>
 </div>

@@ -37,4 +37,11 @@ private getDataFromService(): void{
 
   })
 }
+
+getTasksPerPage(){
+  //being 41 the height of the cells and 120 the necessary space for the pagination numbers and the headings
+  return Math.round((window.innerHeight - 120) / 41);
+
+}
+
 }
