@@ -33,8 +33,6 @@ private getDataFromService(): void{
     } else {
       this.tasks = [];
     }
-    console.log(this.tasks)
-
   })
 }
 
