@@ -1,3 +1,15 @@
+.tasks {
+    &__img {
+        width: 90px;
+    }
+
+    &__status {
+        width: max-content;
+        position: relative;
+        margin: 0 auto;
+    }
+}
+
 .observation{
     &__td:hover &__span{
         display: flex;

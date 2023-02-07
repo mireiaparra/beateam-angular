@@ -1,21 +1,21 @@
 <div class="container">
-    <table class="table">
+    <table class="table border-secondary">
         <thead>
             <tr>
-                <th scope="col" colspan="2">PRODUCTO</th>
-                <th scope="col" colspan="2" class="text-end">Q.</th>
-                <th scope="col">ESTADO</th>
-                <th scope="col">TIPO</th>
-                <th scope="col">FECHA</th>
-                <th scope="col" colspan="2" class="text-center">CLIENTE</th>
+                <th scope="col" colspan="2" class="fw-normal">PRODUCTO</th>
+                <th scope="col" colspan="2" class="text-end fw-normal">Q.</th>
+                <th scope="col" class="text-center fw-normal">ESTADO</th>
+                <th scope="col" class="fw-normal">TIPO</th>
+                <th scope="col" class="fw-normal">FECHA</th>
+                <th scope="col" colspan="2" class="text-center fw-normal">CLIENTE</th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let task of tasks | paginate: { itemsPerPage: getTasksPerPage(), currentPage: p }">
-                <td class="p-0 w-90">
-                    <img src="{{task.logo}}" alt="" [ngStyle]="{'width': '90px'}">
+                <td class="p-0">
+                    <img src="{{task.logo}}" alt="{{task.referencia}}" class="tasks__img">
                  </td>
-                <td class="text-start p-0">{{task.referencia}}</td>
+                <td class="text-start ps-0">{{task.referencia}}</td>
 
                 <td *ngIf="task.observacion" class="observation__td">
                     <i class="fas fa-exclamation-circle text-warning"></i>
@@ -37,9 +37,13 @@
                    </span>
 
                 </td>
-                <td>x{{task.cantidad}}</td>
-                <td>{{task.estado}}</td>
-                <td>{{task.tipo}}</td>
+                <td class="ps-0">x{{task.cantidad}}</td>
+                <td>
+                    <p class="rounded ps-1 pe-1 tasks__status text-white"  [ngClass]="{'bg-secondary': task.estado === 'Pendiente', 'bg-primary': task.estado === 'Desconsolidada', 'bg-warning text-black': task.estado === 'Recogiendo', 'bg-success': task.estado === 'Entregada'}">{{task.estado}}</p>
+                </td>
+                <td>
+                    <p class="rounded ps-1 pe-1 tasks__status text-white bg-dark">{{task.tipo}}</p>
+                </td>
                 <td>{{task.fecha}}</td>
                 <td class="text-end p-0">{{task.codigo_cliente}}</td>
                 <td class="text-start p-0">{{task.alias_cliente}}</td>
