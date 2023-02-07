@@ -9,4 +9,5 @@ fecha?: string;
 codigo_cliente?: string;
 alias_cliente?: string;
 observacion?: string;
+usuario?: string;
 }

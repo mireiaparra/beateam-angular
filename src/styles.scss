@@ -5,3 +5,39 @@
 
 /* Importing Datepicker SCSS file. */
 @import "node_modules/ngx-bootstrap/datepicker/bs-datepicker";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.observation{
+    &__td:hover &__span{
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__span{
+        display: none;
+        background-color: white;
+        position: absolute;
+        z-index: 1;
+        border: 1px solid grey;
+        width: 250px;
+        padding: 8px;
+        border-radius: 10px;
+        height: 118px;
+        transform: translate(-111px, 11px);
+    }
+
+    &__triangle {
+        width: 0;
+        height: 0;
+        border-bottom: 17px solid rgb(214, 212, 212);
+        border-left: 17px solid transparent;
+        border-right: 17px solid transparent;
+        position: absolute;
+        top: -16px;
+        left: 101px;
+      }
+  
+}
+

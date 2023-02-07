@@ -12,13 +12,32 @@
         </thead>
         <tbody>
             <tr *ngFor="let task of tasks | paginate: { itemsPerPage: 10, currentPage: p }">
-                <td class="p-0" [ngStyle]="{'width': '90px'}">
+                <td class="p-0 w-90">
                     <img src="{{task.logo}}" alt="" [ngStyle]="{'width': '90px'}">
                  </td>
                 <td class="text-start p-0">{{task.referencia}}</td>
-                <td *ngIf="task.observacion"><p [ngStyle]="{'background': 'yellow', 'border-radius': '50%', 'text-align': 'center', 'color': 'black', 'width': '17px'}" >!</p></td>
-                <td *ngIf="!task.observacion"><p [ngStyle]="{'background': 'blue', 'border-radius': '50%', 'text-align': 'center', 'color': 'white', 'width': '17px'}">i</p></td>
-                <td>{{task.cantidad}}</td>
+
+                <td *ngIf="task.observacion" class="observation__td">
+                    <i class="fas fa-exclamation-circle text-warning"></i>
+                    <span class="observation__span">
+                        <div class="observation__triangle"></div>
+                        <p>Obs.linea: {{task.observacion}}</p>
+                        <p>Obs.pedido:</p>
+                        <p>Pedido por: {{task.usuario}}</p>
+                       </span>
+                </td>
+
+                <td *ngIf="!task.observacion" class="observation__td">
+                   <i class="fas fa-info-circle text-primary"></i>
+                   <span class="observation__span">
+                   <div class="observation__triangle"></div>
+                    <p>Obs.linea:</p>
+                    <p>Obs.pedido:</p>
+                    <p>Pedido por: {{task.usuario}}</p>
+                   </span>
+
+                </td>
+                <td>x{{task.cantidad}}</td>
                 <td>{{task.estado}}</td>
                 <td>{{task.tipo}}</td>
                 <td>{{task.fecha}}</td>
