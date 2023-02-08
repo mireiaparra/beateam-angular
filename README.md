@@ -2,7 +2,7 @@
 
 Este proyecto es una prueba técnica para la empresa Beateam, realizado con Angular.
 
-Ha sido generado con [Angular CLI](https://github.com/angular/angular-cli) version 15.1.3.
+Ha sido generado con [Angular CLI](https://github.com/angular/angular-cli) versión 15.1.3.
 
 ## Descripción
 Consiste en una página que permite ver y gestionar una lista de pedidos realizados por diferentes clientes.
@@ -34,7 +34,7 @@ Para una mejor visualización, los resultados se muestran paginados según la al
 ## Instalación
 Clone el repositorio en su máquina local:
 ```bash
-git clone https://github.com/[username]/beateam-test.git
+git clone https://github.com/mireiaparra/beateam-angular.git
 ```
 
 Instale las dependencias del proyecto:
