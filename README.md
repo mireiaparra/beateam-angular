@@ -1,27 +1,54 @@
-# BeateamAngular
+# Prueba Beateam
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.3.
+Este proyecto es una prueba técnica para la empresa Beateam, realizado con Angular.
 
-## Development server
+Ha sido generado con [Angular CLI](https://github.com/angular/angular-cli) version 15.1.3.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Descripción
+Consiste en una página que permite ver y gestionar una lista de pedidos realizados por diferentes clientes.
 
-## Code scaffolding
+La información de cada pedido se presenta en una tabla, donde se muestran los siguientes detalles:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+* Producto
+* Cantidad
+* Estado
+* Tipo
+* Fecha
+* Cliente
 
-## Build
+Además, los pedidos se pueden filtrar por varios criterios, incluyendo:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+* Cliente
+* Referencia
+* Usuario
+* Fecha
+* Tipo
+* Estado
 
-## Running unit tests
+Para una mejor visualización, los resultados se muestran paginados según la altura de la pantalla del dispositivo con el que se está accediendo. De esta forma, se puede ver un número apropiado de resultados en cada página, evitando una sobrecarga visual.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Requisitos
+* Node.js
+* Angular CLI
 
-## Running end-to-end tests
+## Instalación
+Clone el repositorio en su máquina local:
+```bash
+git clone https://github.com/[username]/beateam-test.git
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Instale las dependencias del proyecto:
+```bash
+npm install
+```
+## Ejecución
+Para ejecutar el proyecto, utilice el siguiente comando en la raíz del proyecto:
 
-## Further help
+```bash
+ng serve
+````
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Una vez ejecutado, el proyecto estará disponible en http://localhost:4200/.
+
+## Estilos
+Para los estilos, se ha usado Bootstrap y Scss.
