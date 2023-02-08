@@ -12,8 +12,8 @@
         </thead>
         <tbody>
             <tr *ngFor="let task of tasks | paginate: { itemsPerPage: getTasksPerPage(), currentPage: p }">
-                <td class="p-0">
-                    <img src="{{task.logo}}" alt="{{task.referencia}}" class="tasks__img">
+                <td class="p-0 tasks__img">
+                    <img src="{{task.logo}}" alt="Logo {{task.referencia}}" class="tasks__img">
                  </td>
                 <td class="text-start ps-0">{{task.referencia}}</td>
 

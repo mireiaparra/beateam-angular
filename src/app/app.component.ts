@@ -1,20 +1,19 @@
 import { Component } from '@angular/core';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
-export class AppComponent  {
+export class AppComponent {
   title = 'beateam-angular';
   searchForm = {
-    client: "",
-    reference: "",
-    user: "",
-    type: "",
+    client: '',
+    reference: '',
+    user: '',
+    type: '',
     date: [],
-    status: []
+    status: [],
   };
 
   send(event: any) {
@@ -22,7 +21,5 @@ export class AppComponent  {
     this.searchForm.status = event.selectedStatus;
   }
 
-    constructor() { }
- 
-
+  constructor() {}
 }

@@ -11,8 +11,8 @@ import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
 export class SearchComponent implements OnInit {
   searchForm!: FormGroup;
   types: string[] = [];
-  status: Array<any> = [];
-  selectedStatus: Array<string> = [];
+  status: string[] = [];
+  selectedStatus: string[] = [];
   datePickerConfig: Partial<BsDatepickerConfig>;
 
   @Output() submitEvent: EventEmitter<any> = new EventEmitter<{searchForm: string, selectedStatus: string}>();
