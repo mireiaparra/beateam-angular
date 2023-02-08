@@ -20,20 +20,22 @@
                 <td *ngIf="task.observacion" class="observation__td">
                     <i class="fas fa-exclamation-circle text-warning"></i>
                     <span class="observation__span">
+                        <div class="observation__triangle--big"></div>
                         <div class="observation__triangle"></div>
-                        <p>Obs.linea: {{task.observacion}}</p>
-                        <p>Obs.pedido:</p>
-                        <p>Pedido por: {{task.usuario}}</p>
+                        <p><span class="fw-bold">Obs.linea:</span> {{task.observacion}}</p>
+                        <p class="fw-bold">Obs.pedido:</p>
+                        <p><span class="fw-bold">Pedido por:</span> {{task.usuario}}</p>
                        </span>
                 </td>
 
                 <td *ngIf="!task.observacion" class="observation__td">
                    <i class="fas fa-info-circle text-primary"></i>
                    <span class="observation__span">
+                    <div class="observation__triangle--big"></div>
                    <div class="observation__triangle"></div>
-                    <p>Obs.linea:</p>
-                    <p>Obs.pedido:</p>
-                    <p>Pedido por: {{task.usuario}}</p>
+                    <p class="fw-bold">Obs.linea:</p>
+                    <p class="fw-bold">Obs.pedido:</p>
+                    <p><span class="fw-bold">Pedido por:</span> {{task.usuario}}</p>
                    </span>
 
                 </td>

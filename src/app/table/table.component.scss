@@ -47,12 +47,23 @@
     &__triangle {
         width: 0;
         height: 0;
-        border-bottom: 17px solid rgb(214, 212, 212);
+        border-bottom: 17px solid rgb(255, 255, 255);
         border-left: 17px solid transparent;
         border-right: 17px solid transparent;
         position: absolute;
         top: -16px;
         left: 101px;
+
+        &--big{
+            width: 0;
+            height: 0;
+            border-bottom: 19px solid grey;
+            border-left: 17px solid transparent;
+            border-right: 17px solid transparent;
+            position: absolute;
+            top: -19px;
+            left: 101px;
+        }
       }
   
 }
