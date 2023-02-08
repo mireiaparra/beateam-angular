@@ -18,9 +18,9 @@ export class TasksService {
     .toISOString()
     .split('T')[0]
     .replaceAll('-', '');
-  privateKey: any = this.privatePart + this.dateFormatted;
+  privateKey: string = this.privatePart + this.dateFormatted;
   encrypted: any = crypto.SHA384(this.privateKey);
-  token: any = this.encrypted.toString();
+  token: string = this.encrypted.toString();
 
   getTasks(searchForm: any): Observable<Tasks[]> {
     let headers = new HttpHeaders({
