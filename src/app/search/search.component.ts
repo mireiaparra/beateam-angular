@@ -85,6 +85,9 @@ onClear(input: string){
   this.searchForm.patchValue({
     [input]: ''
   });
+  this.submitEvent.emit({
+    "searchForm": this.searchForm.value,
+    "selectedStatus": this.selectedStatus});
 }
 
 }
