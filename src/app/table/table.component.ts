@@ -1,4 +1,4 @@
-import { Component, DoCheck, Input, OnChanges, OnInit } from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
 import { TasksService } from '../services/tasks.service';
 import { Tasks } from '../../interfaces/tasks.interface';
 
@@ -17,6 +17,7 @@ export class TableComponent implements OnChanges {
 
   ngOnChanges(): void {
     this.getDataFromService();
+    this.p = 1;
   }
 
   private getDataFromService(): void {
